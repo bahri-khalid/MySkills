@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(241, 240, 240);
+    font-family: 'Roboto', sans-serif;
+}
+
+.head{
+    text-align: center;
+    height: 100px;
+    padding-top: 25px ;
+}
+
+h1{
+    color: whitesmoke;
+    display: inline-block;
+    position: relative;
+}
+
+.head h1::after{
+    content: "";
+    position: absolute;
+    left: 20%;
+    bottom: -15px;
+    width: 70px;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: rgb(8, 189, 78);
+}
+
+.container{
+    background-color: rgb(46, 45, 45);
+    height:100%;
+    width: 100%;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    grid-gap: 1rem;
+}
+.wrapper div:last-child{
+    grid-column: 2/3;
+}
+
+img{
+    width: 60px;
+    height: 60px;
+}
+
+
+.pic::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background:#1010105d;
+    left: 0;
+    top: 0;
+
+}
+
+.pic{
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.skil> *{
+   margin-top: 10px;
+}
+.skil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.discription{
+    max-width: 350px;
+}
+
+h2{
+    position: relative;
+}
+.skil:hover h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background: rgb(8, 189, 78);
+    animation: move forwards 1s ease-in infinite alternate;
+}
+.skil:hover >.pic{
+    transform: translateY(-15px);
+    box-shadow: -2px -3px 10px 2px rgb(8, 189, 78) ;
+}
+@keyframes move{
+    from{
+        transform: rotateY(90deg);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        text-align: center;
+        grid-gap: 1rem;
+    }
+    .wrapper div:last-child{
+        grid-column: 1/2;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        text-align: center;
+        grid-gap: 1rem;
+    }
+    .wrapper div:last-child{
+        grid-column: 1;
+    }
+  }
